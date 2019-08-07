@@ -1,19 +1,20 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import CameraIcon from '@material-ui/icons/PhotoCamera';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-import Toolbar from '@material-ui/core/Toolbar';
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
-import img from "../img/landing-bg.jpg"
-import Nav from "./Nav"
+import img from "../img/landing-bg.jpg" 
+import pop from "../img/POP.jpg"
+import rock from  "../img/ROCK.jpg"
+import metal from "../img/metal.jpg"
+
 function GridLayout() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -24,6 +25,8 @@ function GridLayout() {
     </Typography>
   );
 }
+
+{/* THE PART YOU DON'T WANNA TOUCH */}
 const useStyles = makeStyles(theme => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -56,7 +59,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const card1 = [1,2,3];
 
 export default function Album() {
   const classes = useStyles();
@@ -75,12 +78,12 @@ export default function Album() {
           </Typography>
 
      </Toolbar> */}
-      
+
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent} style = {{backgroundImage: `url(${img})`}}>
                 
-          <Container maxWidth="sm">
+          <Container maxWidth="xl">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
             <div style={{ color: 'White' }}>Album layout</div> 
             </Typography>
@@ -90,12 +93,12 @@ export default function Album() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
-                    Main call to action
+                  <Button variant="outlined" color="muted">
+                    Go to Library
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" color="primary">
+                  <Button variant="outlined" color="muted">
                     Secondary action
                   </Button>
                 </Grid>
@@ -103,38 +106,105 @@ export default function Album() {
             </div>
           </Container>
         </div>
-        <Container className={classes.cardGrid} maxWidth="md">
-          {/* End hero unit */}
-          <Grid container spacing={4}>
-            {cards.map(card => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
-                    title="Image title"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Pop
-                    </Typography>
-                    <Typography>
-                      Thwirtejgirutghwruu
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
+
+          {/*..................... FOR THE CARDS AND STUFF...........................*/}
+      <Container className={classes.cardGrid} maxWidth="md">
+      {/*........ POP CARD ....... */}
+      <Grid container spacing={4}>
+        {card1.map(card => (
+          <Grid item key={card} xs={12} sm={61} md={4}>
+            <Card className={classes.card}>
+              <CardMedia
+                className={classes.cardMedia}
+                image={pop}
+                title="Pop"
+              />
+              <CardContent className={classes.cardContent}>
+                <Typography gutterBottom variant="h5" component="h2">
+                  Pop
+                </Typography>
+                <Typography>POP</Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small" color="warning">
+                  View
+                </Button>
+                <Button size="small" color="primary">
+                  Edit
+                </Button>
+              </CardActions>
+            </Card>
           </Grid>
-        </Container>
+        ))}
+      </Grid>
+    </Container>
+
+
+    <Container className={classes.cardGrid} maxWidth="md">
+      {/*........ ROCK CARD ....... */}
+      <Grid container spacing={4}>
+        {card1.map(card => (
+          <Grid item key={card} xs={12} sm={61} md={4}>
+            <Card className={classes.card}>
+              <CardMedia
+                className={classes.cardMedia}
+                image={rock}
+                title="Pop"
+              />
+              <CardContent className={classes.cardContent}>
+                <Typography gutterBottom variant="h5" component="h2">
+                  ROCK
+                </Typography>
+                <Typography>ROCK</Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small" color="warning">
+                  View
+                </Button>
+                <Button size="small" color="primary">
+                  Edit
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
+
+    <Container className={classes.cardGrid} maxWidth="md">
+      {/*........ METAL CARD ....... */}
+      <Grid container spacing={4}>
+        {card1.map(card => (
+          <Grid item key={card} xs={12} sm={61} md={4}>
+            <Card className={classes.card}>
+              <CardMedia
+                className={classes.cardMedia}
+                image={metal}
+                title="Metal"
+              />
+              <CardContent className={classes.cardContent}>
+                <Typography gutterBottom variant="h5" component="h2">
+                  METAL
+                </Typography>
+                <Typography>METAL</Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small" color="warning">
+                  View
+                </Button>
+                <Button size="small" color="primary">
+                  Edit
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
+
+    
+      
+         {/*..................... FOR THE FOOTER..........................*/}
       </main>
       {/* Footer */}
       <footer className={classes.footer}>
@@ -142,7 +212,7 @@ export default function Album() {
          Trax
         </Typography>
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          eroiuughoreughoire
+          booooooooooooooire
         </Typography>
         <GridLayout />
       </footer>
