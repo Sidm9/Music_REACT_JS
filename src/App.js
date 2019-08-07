@@ -4,13 +4,14 @@ import Nav from "./Components/Header/Nav";
 import Grid from "./Components/Trending/Grid";
 import Header from "./Components/Header/Header";
 import Background from "./Components/Background.js";
+import img from "./Components/img/landing-bg.jpg"
 function App() {
   return (
+   
     <Fragment>
+   {/* <div style = {{backgroundImage: `url(${img})`}}></div> */}         
       <Nav />
-      <Header />
-      
-      <Background />
+      <Header/>
     </Fragment>
   );
 }
