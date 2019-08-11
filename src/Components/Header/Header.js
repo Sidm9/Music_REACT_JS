@@ -13,11 +13,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import img from "../img/landing-bg.jpg";
+import bg from "../img/AdobeStock_208568531.jpeg";
 import pop from "../img/POP.jpg";
 import rock from "../img/ROCK.jpg";
 import metal from "../img/metal.jpg";
 import Main from "../Trending/Main.js";
-import Grids from "../MAIN/Grids.js"
+import Grids from "../MAIN/Grids.js";
+import Nav from "../Header/Nav";
+import { typography } from "@material-ui/system";
 
 function GridLayout() {
   return (
@@ -75,6 +78,7 @@ export default function Album() {
     <BrowserRouter>
       <React.Fragment>
         <CssBaseline />
+        <Nav />
         {/*
         <Toolbar>
           <img src="https://img.icons8.com/ios/24/000000/music.png"/>
@@ -84,59 +88,74 @@ export default function Album() {
           </Typography>
 
      </Toolbar> */}
-
-        <main>
-          {/* Hero unit */}
-          <div
-            className={classes.heroContent}
-            style={{ backgroundImage: `url(${img})` }}
-          >
-            <Container maxWidth="xl">
-              <Typography
-                component="h1"
-                variant="h2"
-                align="center"
-                color="textPrimary"
-                gutterBottom
-              >
-                <div style={{ color: "White" }}>Album layout</div>
-              </Typography>
-              <Typography
-                variant="h5"
-                align="center"
-                color="textSecondary"
-                paragraph
-              >
-                <div style={{ color: "White" }}>
-                  Select your Genre So we can curate songs according to your
-                  Interests...{" "}
-                </div>
-              </Typography>
-              <div className={classes.heroButtons}>
-                <Grid container spacing={2} justify="center">
-                  <Grid item>
-                    <Button variant="contained" color="primary">
-                    <BrowserRouter>
-                    <Link to = "/Grids" >
-                      Go to Library
+        <div style={{ backgroundImage: `url(${bg})` }}>
+          <main>
+            {/* Hero unit */}
+            <div
+              className={classes.heroContent}
+              style={{ backgroundImage: `url(${bg})` }}
+            >
+              <Container maxWidth="xl">
+                <Typography
+                  component="h1"
+                  variant="h2"
+                  align="center"
+                  color="textPrimary"
+                  gutterBottom
+                >
+                  <div style={{ color: "White" }}>Album layout</div>
+                </Typography>
+                <Typography
+                  variant="h5"
+                  align="center"
+                  color="textSecondary"
+                  paragraph
+                >
+                  <div style={{ color: "White" }}>
+                    Select your Genre So we can curate songs according to your
+                    Interests...{" "}
+                  </div>
+                </Typography>
+                <div className={classes.heroButtons}>
+                  <Grid container spacing={2} justify="center">
+                    <Grid item>
+                      <Button variant="contained" color="primary">
+                        {/*  <BrowserRouter>
+                    <Link to = "/Main" >
+                    */}
+                        Go to Library
+                        {/* <BrowserRouter>
+                              <Route path = "/Main" component = {Main}></Route>
+                      </BrowserRouter>
                       </Link>
                       <Route path = "/Grids" component = {Grids}/>
                       </BrowserRouter>
-                    </Button>
-                  </Grid> 
-                  <Grid item>
-                    <Button variant="contained" color="muted">
-                      Secondary action
-                    </Button>
+                       */}
+                      </Button>
+                    </Grid>
+                    <Grid item>
+                      <Button variant="contained" color="muted">
+                        Secondary action
+                      </Button>
+                    </Grid>
                   </Grid>
-                </Grid>
+                </div>
+              </Container>
+            </div>
+
+            {/*..................... FOR THE CARDS AND STUFF...........................*/}
+            <Typography
+              variant="h5"
+              align="center"
+              color="white"
+              paragraph
+            >
+            <div style={{ color: "White" }}>
+              Trending
               </div>
-            </Container>
-          </div>
-      
-          {/*..................... FOR THE CARDS AND STUFF...........................*/}
-          <Grids />
-       {/*   <Container className={classes.cardGrid}>
+            </Typography>
+            <Grids />
+            {/*   <Container className={classes.cardGrid}>
             {/*........ POP CARD ....... 
             <Grid container spacing={2}>
               {card1.map((
@@ -170,25 +189,26 @@ export default function Album() {
           </Container> 
           */}
 
-          
+            {/*..................... FOR THE FOOTER..........................*/}
+          </main>
 
-          {/*..................... FOR THE FOOTER..........................*/}
-        </main>
-        {/* Footer */}
-        <footer className={classes.footer}>
-          <Typography variant="h6" align="center" gutterBottom>
-            Trax
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            color="textSecondary"
-            component="p"
-          >
-            booooooooooooooire
-          </Typography>
-          <GridLayout />
-        </footer>
+          {/* Footer */}
+          <footer className={classes.footer}>
+            <Typography variant="h6" align="center" gutterBottom>
+            
+              Trax
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              align="center"
+              color="textSecondary"
+              component="p"
+            >
+              booooooooooooooire
+            </Typography>
+            <GridLayout />
+          </footer>
+        </div>
         {/* End footer */}
       </React.Fragment>
       <Route exact path="/Main" component={Main} />

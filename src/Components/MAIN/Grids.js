@@ -67,6 +67,25 @@ const useStyles = makeStyles(theme => ({
     }
   }
 }));
+
+const trending = [
+  {
+    id: "1",
+  },
+  {
+    id: "2"
+  },
+  {
+    id: "3"
+  },
+  {
+    id: "4"
+  },
+  {
+    id: "5"
+  }
+];
+
 const genre = [
   {
     title: "Jazz",
@@ -94,7 +113,67 @@ const genre = [
     img: "../img/CLassical.jpg"
   },
   {
-    title: "Metal",
+    title: "Heavy Metal",
+    id: "5",
+    img: "../img/metal.jpg"
+  },
+  {
+    title: "Heavy Metal",
+    id: "5",
+    img: "../img/metal.jpg"
+  },
+  {
+    title: "Heavy Metal",
+    id: "5",
+    img: "../img/metal.jpg"
+  },
+  {
+    title: "Heavy Metal",
+    id: "5",
+    img: "../img/metal.jpg"
+  },
+  {
+    title: "Heavy Metal",
+    id: "5",
+    img: "../img/metal.jpg"
+  },
+  {
+    title: "Heavy Metal",
+    id: "5",
+    img: "../img/metal.jpg"
+  },
+  {
+    title: "Heavy Metal",
+    id: "5",
+    img: "../img/metal.jpg"
+  },
+  {
+    title: "Heavy Metal",
+    id: "5",
+    img: "../img/metal.jpg"
+  },
+  {
+    title: "Heavy Metal",
+    id: "5",
+    img: "../img/metal.jpg"
+  },
+  {
+    title: "Heavy Metal",
+    id: "5",
+    img: "../img/metal.jpg"
+  },
+  {
+    title: "Heavy Metal",
+    id: "5",
+    img: "../img/metal.jpg"
+  },
+  {
+    title: "Heavy Metal",
+    id: "5",
+    img: "../img/metal.jpg"
+  },
+  {
+    title: "Heavy Metal",
     id: "5",
     img: "../img/metal.jpg"
   }
@@ -104,30 +183,56 @@ export default function Grids() {
   return (
     <Container className={classes.cardGrid}>
       {/*........ POP CARD ....... */}
-      
+
       <Grid container spacing={2}>
-      {genre.map((
-        genre // FOR MORE GRIDS>.!!!
+      {trending.map((
+         // FOR MORE GRIDS>.!!!
       ) => (
+        <Grid item key={trending} xs={12} sm={12} md={1}>
+          <Card className={classes.card}>
+            <CardMedia className={classes.cardMedia} image={pop} />
+            <CardContent className={classes.cardContent}>
+              <Typography gutterBottom variant="h5" component="h2">
+                {trending.id}
+              </Typography>
+              <Typography>{trending.id}</Typography>
+            </CardContent>
+            <Button size="small" color="primary">
+              GO TO <br/>
+            </Button>
+            <CardActions />
+          </Card>
+        </Grid>
+      ))}
+    </Grid>
+
+
+
+
+
+
+
+
+      <Grid container spacing={2}>
+        {genre.map((
+          genre // FOR MORE GRIDS>.!!!
+        ) => (
           <Grid item key={genre} xs={2} sm={2} md={2}>
             <Card className={classes.card}>
-              <CardMedia
-                className={classes.cardMedia}
-                image={pop}
-              />
+              <CardMedia className={classes.cardMedia} image={pop} />
               <CardContent className={classes.cardContent}>
                 <Typography gutterBottom variant="h5" component="h2">
                   {genre.title}
-                </Typography> 
+                </Typography>
                 <Typography>{genre.title}</Typography>
               </CardContent>
               <Button size="small" color="primary">
-                        GO TO
-                      </Button>
+                GO TO
+              </Button>
               <CardActions />
             </Card>
           </Grid>
-      ))}
+        ))}
       </Grid>
     </Container>
   );

@@ -6,13 +6,21 @@ import Background from "./Components/Background.js";
 import Main from "./Components/Trending/Main";
 import Like from "./Components/Trending/Like";
 import Grid from "./Components/MAIN/Grids";
-
+import img from "./Components/img/landing-bg.jpg"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
-      <div>
+    
+  <Router>
+      
+   
+        <Route path="/Grid" component={Grid} />
+        <Route exact path="/" component={Header} />
+        <Route path="/about" component={Nav} />
+        <Route path="/Main" component={Main} />
+
+        <div>
         <ul>
           <li>
             <Link to="/">HOME</Link>
@@ -24,22 +32,22 @@ function App() {
             <Link to="/about">About</Link>
           </li>
           <li>
-            <Link to="/topics">Topics</Link>
-          </li>
+            <Link to="/Main">Main</Link>
+          </li> 
         </ul>
         <hr />
-        <Route path="/Grid" component={Grid} />
-        <Route exact path="/" component={Header} />
-        <Route path="/about" component={Nav} />
-        <Route path="/topics" component={Main} />
       </div>
     </Router>
-
-    // <Fragment>
-    // <Header/>
-    // <Nav/>
-    // </Fragment>
+ 
+/*    
+    <Fragment>
+    { <Nav/>
+     <Header/>
+     <Main/>
+    </Fragment>
+    
+  */
   );
-}
+    }
 
 export default App;
