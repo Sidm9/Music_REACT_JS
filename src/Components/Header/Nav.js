@@ -5,15 +5,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
-import Badge from "@material-ui/core/Badge";
-import MenuItem from "@material-ui/core/MenuItem";
-import Menu from "@material-ui/core/Menu";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import MailIcon from "@material-ui/icons/Mail";
-import NotificationsIcon from "@material-ui/icons/Notifications";
-import MoreIcon from "@material-ui/icons/MoreVert";
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -55,7 +48,7 @@ const useStyles = makeStyles(theme => ({
     color: "inherit"
   },
   inputInput: {
-    padding: theme.spacing(1, 1, 1, 7),
+    padding: theme.spacing(1, 12, 1, 7),
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("sm")]: {
@@ -71,27 +64,34 @@ export default function SearchAppBar() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} style = {{ color : 'White'}}>
       <AppBar position="relative" color="white" style={{ background: 'transparent', boxShadow: 'none'}} >
       
         <Toolbar>
           <IconButton
+            style = {{ color : 'White'}}
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
+            
           >
             <MenuIcon />
           </IconButton>
           <img src="https://img.icons8.com/ios/24/000000/music.png" />
           <Typography className={classes.title} variant="h6" noWrap>
+          <div style = {{ color : 'White'}}>
             Trax
-          </Typography>
-          <div className={classes.search}>
+            </div>
+          </Typography >
+          <div style = {{ color : 'White'}}>
+          <div className={classes.search} >
             <div className={classes.searchIcon}>
               <SearchIcon />
+              
             </div>
-            <InputBase
+            <InputBase 
+             
               placeholder="Search…"
               classes={{
                 root: classes.inputRoot,
@@ -100,8 +100,10 @@ export default function SearchAppBar() {
               inputProps={{ "aria-label": "search" }}
             />
           </div>
+          </div>
         </Toolbar>
       </AppBar>
     </div>
   );
 }
+

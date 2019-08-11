@@ -1,91 +1,134 @@
 import React, { Component } from "react";
+import pop from "../img/POP.jpg";
+import rock from "../img/ROCK.jpg";
+import metal from "../img/metal.jpg";
+import Grid from "@material-ui/core/Grid";
+import icons from "@material-ui/icons";
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
+import Card from "@material-ui/core/Card";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
+import CardMedia from "@material-ui/core/CardMedia";
 
-import img from "../img/landing-bg.jpg";
-class Grids extends Component {
-  render() {
-    {
-      /* THE PART YOU DON'T WANNA TOUCH */
+const useStyles = makeStyles(theme => ({
+  "@global": {
+    body: {
+      backgroundColor: theme.palette.common.white
+    },
+    ul: {
+      margin: 0,
+      padding: 0
+    },
+    li: {
+      listStyle: "none"
     }
-    const useStyles = makeStyles(theme => ({
-      icon: {
-        marginRight: theme.spacing(2)
-      },
-      heroContent: {
-        backgroundColor: theme.palette.background.paper,
-        padding: theme.spacing(8, 0, 6)
-      },
-      heroButtons: {
-        marginTop: theme.spacing(4)
-      },
-      cardGrid: {
-        paddingTop: theme.spacing(8),
-        paddingBottom: theme.spacing(8)
-      },
-      card: {
-        height: "100%",
-        display: "flex",
-        flexDirection: "column"
-      },
-      cardMedia: {
-        paddingTop: "56.25%" // 16:9
-      },
-      cardContent: {
-        flexGrow: 1
-      },
-      footer: {
-        backgroundColor: theme.palette.background.paper,
-        padding: theme.spacing(6)
-      }
-    }));
-
-    const card1 = [1];
-    
-    const classes = useStyles();
-    return (
-      <div>
-        {/* FOR THE CARDS AND STUFF....*/}
-        <Container className={classes.cardGrid} maxWidth="md">
-          {/* End hero unit */}
-          <Grid container spacing={4}>
-            {card1.map(card => (
-              <Grid item key={card} xs={12} sm={61} md={4}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
-                    title="Pop"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Pop
-                    </Typography>
-                    <Typography>POP</Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small" color="warning">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </div>
-    );
+  },
+  appBar: {
+    borderBottom: `1px solid ${theme.palette.divider}`
+  },
+  toolbar: {
+    flexWrap: "wrap"
+  },
+  toolbarTitle: {
+    flexGrow: 1
+  },
+  link: {
+    margin: theme.spacing(1, 1.5)
+  },
+  heroContent: {
+    padding: theme.spacing(8, 0, 6)
+  },
+  cardGrid: {
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8)
+  },
+  card: {
+    height: "100%",
+    display: "flex",
+    flexDirection: "column"
+  },
+  cardMedia: {
+    paddingTop: "56.25%" // 16:9
+  },
+  cardContent: {
+    flexGrow: 1
+  },
+  footer: {
+    borderTop: `1px solid ${theme.palette.divider}`,
+    marginTop: theme.spacing(8),
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3),
+    [theme.breakpoints.up("sm")]: {
+      paddingTop: theme.spacing(6),
+      paddingBottom: theme.spacing(6)
+    }
   }
+}));
+const genre = [
+  {
+    title: "Jazz",
+    id: "1",
+    img: "../img/Jazz.jpg"
+  },
+  {
+    title: "Pop",
+    id: "2",
+    img: "../img/POP.jpg"
+  },
+  {
+    title: "Rock",
+    id: "3",
+    img: "../img/Rock.jpg"
+  },
+  {
+    title: "Metal",
+    id: "4",
+    img: "../img/metal.jpg"
+  },
+  {
+    title: "Classical",
+    id: "4",
+    img: "../img/CLassical.jpg"
+  },
+  {
+    title: "Metal",
+    id: "5",
+    img: "../img/metal.jpg"
+  }
+];
+export default function Grids() {
+  const classes = useStyles();
+  return (
+    <Container className={classes.cardGrid}>
+      {/*........ POP CARD ....... */}
+      
+      <Grid container spacing={2}>
+      {genre.map((
+        genre // FOR MORE GRIDS>.!!!
+      ) => (
+          <Grid item key={genre} xs={2} sm={2} md={2}>
+            <Card className={classes.card}>
+              <CardMedia
+                className={classes.cardMedia}
+                image={pop}
+              />
+              <CardContent className={classes.cardContent}>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {genre.title}
+                </Typography> 
+                <Typography>{genre.title}</Typography>
+              </CardContent>
+              <Button size="small" color="primary">
+                        GO TO
+                      </Button>
+              <CardActions />
+            </Card>
+          </Grid>
+      ))}
+      </Grid>
+    </Container>
+  );
 }
-
-export default Grids;
