@@ -12,7 +12,8 @@ import CardContent from "@material-ui/core/CardContent";
 import Card from "@material-ui/core/Card";
 import { makeStyles } from "@material-ui/core/styles";
 import CardMedia from "@material-ui/core/CardMedia";
-
+import cardbg from "../img/1074.png";
+import "./cardbg.css";  
 const useStyles = makeStyles(theme => ({
   "@global": {
     body: {
@@ -68,9 +69,10 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+
 const trending = [
   {
-    id: "1",
+    id: "1"
   },
   {
     id: "2"
@@ -185,33 +187,30 @@ export default function Grids() {
       {/*........ POP CARD ....... */}
 
       <Grid container spacing={2}>
-      {trending.map((
-         // FOR MORE GRIDS>.!!!
-      ) => (
-        <Grid item key={trending} xs={12} sm={12} md={1}>
-          <Card className={classes.card}>
-            <CardMedia className={classes.cardMedia} image={pop} />
-            <CardContent className={classes.cardContent}>
-              <Typography gutterBottom variant="h5" component="h2">
-                {trending.id}
-              </Typography>
-              <Typography>{trending.id}</Typography>
-            </CardContent>
-            <Button size="small" color="primary">
-              GO TO <br/>
-            </Button>
-            <CardActions />
-          </Card>
-        </Grid>
-      ))}
-    </Grid>
-
-
-
-
-
-
-
+        {trending.map(() => (
+          // FOR MORE GRIDS>.!!!
+          <Grid item key={trending} xs={12} sm={12} md={1}>
+            <Card className={classes.card}>
+        {/* ADDED BACKGROUND */}
+            <div style = {{backgroundImage: `url(${cardbg})`}}>
+              <CardMedia  className={classes.cardMedia} image={pop} />
+              <CardContent  className={classes.cardContent}>
+             
+                <Typography gutterBottom variant="h5" component="h2">
+                  {trending.id}
+                </Typography>
+                <Typography>{trending.id}</Typography>
+                
+              </CardContent>
+              <Button size="small" color="primary">
+                GO TO <br />
+              </Button>
+              <CardActions />
+              </div>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
 
       <Grid container spacing={2}>
         {genre.map((
@@ -219,6 +218,8 @@ export default function Grids() {
         ) => (
           <Grid item key={genre} xs={2} sm={2} md={2}>
             <Card className={classes.card}>
+            <div style = {{backgroundImage: `url(${cardbg})`}}>
+            
               <CardMedia className={classes.cardMedia} image={pop} />
               <CardContent className={classes.cardContent}>
                 <Typography gutterBottom variant="h5" component="h2">
@@ -230,6 +231,7 @@ export default function Grids() {
                 GO TO
               </Button>
               <CardActions />
+              </div>
             </Card>
           </Grid>
         ))}

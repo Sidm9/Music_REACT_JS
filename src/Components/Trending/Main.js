@@ -22,11 +22,13 @@ import rock from "../img/ROCK.jpg";
 import metal from "../img/metal.jpg";
 import Grids from "../MAIN/Grids.js";
 import Nav from "../Header/Nav";
+import Carousel from "../Header/Carousel";
+
 
 export default function Main() {
   return (
-    <div>
-      <h1>FOR THE MAIN PART...</h1>
-    </div>
+    <React.Fragment>
+          <Carousel />
+    </React.Fragment>
   );
 }

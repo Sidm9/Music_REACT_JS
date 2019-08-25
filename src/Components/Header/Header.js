@@ -78,7 +78,7 @@ export default function Album() {
     <BrowserRouter>
       <React.Fragment>
         <CssBaseline />
-        <Nav />
+       
         {/*
         <Toolbar>
           <img src="https://img.icons8.com/ios/24/000000/music.png"/>

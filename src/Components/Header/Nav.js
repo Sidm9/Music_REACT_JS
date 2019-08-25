@@ -11,13 +11,21 @@ import Button from "@material-ui/core/Button";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Grids from "../MAIN/Grids";
 import Main from "../Trending/Main";
-import Header from  "../Header/Header.js"
+import Header from "../Header/Header.js";
+import Badge from "@material-ui/core/Badge";
+import MailIcon from "@material-ui/icons/Mail";
+import Carousel from "./Carousel";
+
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
   },
   menuButton: {
     marginRight: theme.spacing(2)
+  },
+  margin: {
+    margin: theme.spacing(2)
   },
   title: {
     flexGrow: 1,
@@ -69,69 +77,80 @@ export default function SearchAppBar() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root} style = {{ color : 'White'}}>
-      <AppBar position="relative" color="white" style={{ /*background: 'transparent' ,*/ boxShadow: 'none'}} >
-      
+    <div className={classes.root} style={{ color: "White" }}>
+      <AppBar
+        position="relative"
+        color="white"
+        style={{ /*background: 'transparent' ,*/ boxShadow: "none" }}
+      >
         <Toolbar>
           <IconButton
-            style = {{ color : 'Black'}}
+            style={{ color: "Black" }}
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
-            
           >
             <MenuIcon />
           </IconButton>
           <img src="https://img.icons8.com/ios/24/000000/music.png" />
           <Typography className={classes.title} variant="h6" noWrap>
-          <div style = {{ color : 'Black'}}>
-            Trax
-            </div>
-          </Typography >
-          <Router>
-          <Button color="secondary" >
-          <Link to =  "/Grids" style = {{textDecoration: 'none'}}> Home </Link></Button>
-          <Button color="inherit">
-          <Link to =  "/Grids" style = {{textDecoration: 'none'}}>Grid </Link></Button>
-          <Button color="inherit">
-          <Link to =  "/Main" style = {{textDecoration: 'none'}}>About </Link></Button>
-          <Button color="inherit">
-          <Link to =  "/Topics" style = {{textDecoration: 'none'}}>Main </Link></Button>
+            <div style={{ color: "Black" }}>Trax</div>
+          </Typography>
 
-          <Route path = "/Grids" component = {Grids}/>
-          <Route path = "/Header" component = {Header}/>
-          <Route path = "/Main" component = {Main}/>
-          <Route path = "/Topics" component = {Grids}/>
-          
-          </Router>
-          <div style = {{ color : 'Black'}}>
-          <div className={classes.search} >
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-              
-            </div>
+          {/* Linking portion */}
+          <Router>
+            <Button color="secondary">
+              <Link to="/Grids" style={{ textDecoration: "none" }}>
+                {" "}
+                Home{" "}
+              </Link>
+            </Button>
+            <Button color="inherit">
+              <Link to="/Grids" style={{ textDecoration: "none" }}>
+                Grid{" "}
+              </Link>
+            </Button>
+            <Button color="inherit">
+            <Link to = "/Carousel" style={{ textDecoration: "none" }} >
+                Carousel{" "}
+              </Link>
+            </Button>
+            <Button color="inherit">
+              <Link to="/Topics" style={{ textDecoration: "none" }}>
+                Main{" "}
+              </Link>
+            </Button>
+
+            <Route path="/Grids" component={Grids} />
+            <Route path="/Header" component={Header} />
+            <Route path = "/Header" component  = {Carousel}/>
+            <Route path="/Topics" component={Grids} />
+
             <div>
-             
-        </div>
-            <InputBase 
-             
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput
-              }}
-              
-              inputProps={{ "aria-label": "search" }}
-              
-            />
-            
-          </div>
-          
+              <Badge color="primary" variant="dot">
+                <MailIcon />
+              </Badge>
+            </div>
+          </Router>
+          <div style={{ color: "Black" }}>
+            <div className={classes.search}>
+              <div className={classes.searchIcon}>
+                <SearchIcon />
+              </div>
+              <div />
+              <InputBase
+                placeholder="Search…"
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput
+                }}
+                inputProps={{ "aria-label": "search" }}
+              />
+            </div>
           </div>
         </Toolbar>
       </AppBar>
     </div>
   );
 }
-
