@@ -69,8 +69,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const card1 = [1, 2, 3, 4, 5, 6];
-// YE DEKH
-// YE ARRAY BANI HUI HAI AND ISKE ACCORDING SAARE CARDS BANE HAI IN FORM OF GRID
 export default function Album() {
   const classes = useStyles();
 
@@ -78,7 +76,7 @@ export default function Album() {
     <BrowserRouter>
       <React.Fragment>
         <CssBaseline />
-       
+
         {/*
         <Toolbar>
           <img src="https://img.icons8.com/ios/24/000000/music.png"/>
@@ -150,44 +148,43 @@ export default function Album() {
               color="white"
               paragraph
             >
-            <div style={{ color: "White" }}>
-              Trending
+              <div style={{ color: "White" }}>
+                Trending
               </div>
             </Typography>
             <Grids />
-            {/*   <Container className={classes.cardGrid}>
-            {/*........ POP CARD ....... 
-            <Grid container spacing={2}>
-              {card1.map((
-                card // FOR MORE GRIDS>.!!!
-              ) => (
-                <Grid item key={card} xs={2} sm={2} md={2}>
-                  <Card className={classes.card}>
-                    <CardMedia
-                      className={classes.cardMedia}
-                      image={pop}
-                      title="Pop"
-                    />
-                    <CardContent className={classes.cardContent}>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        Pop
+            {<Container className={classes.cardGrid}>
+              {/*........ POP CARD ....... */
+                <Grid container spacing={2}>
+                  {card1.map((
+                    card // FOR MORE GRIDS>.!!!
+                  ) => (
+                      <Grid item key={card} xs={2} sm={2} md={2}>
+                        <Card className={classes.card}>
+                          <CardMedia
+                            className={classes.cardMedia}
+                            image={pop}
+                            title="Pop"
+                          />
+                          <CardContent className={classes.cardContent}>
+                            <Typography gutterBottom variant="h5" component="h2">
+                              Pop
                       </Typography>
-                      <Typography>POP</Typography>
-                    </CardContent>
-                    <CardActions>
-                      <Button size="small" color="warning">
-                        View
+                            <Typography>POP</Typography>
+                          </CardContent>
+                          <CardActions>
+                            <Button size="small" color="warning">
+                              View
                       </Button>
-                      <Button size="small" color="primary">
-                        Edit
+                            <Button size="small" color="primary">
+                              Edit
                       </Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-          </Container> 
-          */}
+                          </CardActions>
+                        </Card>
+                      </Grid>
+                    ))}
+                </Grid>}
+            </Container>}
 
             {/*..................... FOR THE FOOTER..........................*/}
           </main>
@@ -195,7 +192,7 @@ export default function Album() {
           {/* Footer */}
           <footer className={classes.footer}>
             <Typography variant="h6" align="center" gutterBottom>
-            
+
               Trax
             </Typography>
             <Typography

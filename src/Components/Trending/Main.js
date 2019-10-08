@@ -28,7 +28,8 @@ import Carousel from "../Header/Carousel";
 export default function Main() {
   return (
     <React.Fragment>
-          <Carousel />
+      <Carousel />
+      <Grids/>
     </React.Fragment>
   );
 }

@@ -80,7 +80,7 @@ export default function SearchAppBar() {
     <div className={classes.root} style={{ color: "White" }}>
       <AppBar
         position="relative"
-        color="white"
+        color="muted"
         style={{ /*background: 'transparent' ,*/ boxShadow: "none" }}
       >
         <Toolbar>

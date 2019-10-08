@@ -12,34 +12,6 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    /*  
-  <Router>
-      
-   
-        <Route path="/Grid" component={Grid} />
-        <Route exact path="/" component={Header} />
-        <Route path="/about" component={Nav} />
-        <Route path="/Main" component={Main} />
-
-        <div>
-        <ul>
-          <li>
-            <Link to="/">HOME</Link>
-          </li>
-          <li>
-            <Link to="/Grid">Grid</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/Main">Main</Link>
-          </li> 
-        </ul>
-        <hr />
-      </div>
-    </Router>
- */
 
     <Fragment>
       <Nav />
